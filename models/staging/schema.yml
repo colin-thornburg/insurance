@@ -26,7 +26,7 @@ models:
         data_type: varchar
       - name: premium
         description: "Annual premium amount"
-        data_type: float
+        data_type: number(38,2)
       - name: start_date
         description: "Policy start date"
         data_type: date
@@ -38,10 +38,10 @@ models:
         data_type: varchar
       - name: coverage_limit
         description: "Maximum amount the policy will pay out"
-        data_type: integer
+        data_type: number(38,2)
       - name: deductible
         description: "Amount the policyholder must pay before insurance coverage kicks in"
-        data_type: integer
+        data_type: number(38,2)
 
   - name: monthly_premium
     config:
@@ -60,16 +60,16 @@ models:
         data_type: varchar
       - name: total_premium
         description: "Total premium amount for the month and policy type"
-        data_type: float
+        data_type: number(38,2)
       - name: avg_coverage_limit
         description: "Average coverage limit for the month and policy type"
-        data_type: float
+        data_type: number(38,2)
       - name: avg_deductible
         description: "Average deductible for the month and policy type"
-        data_type: float
+        data_type: number(38,2)
       - name: active_agents
         description: "Number of unique agents with policies in the month and policy type"
-        data_type: integer
+        data_type: number
 
   - name: customer_policy_summary
     description: "Summary of policies for each customer"
@@ -84,13 +84,13 @@ models:
           contains_pii: true
       - name: total_policies
         description: "Total number of policies for the customer"
-        data_type: integer
+        data_type: number
       - name: total_premium
         description: "Total premium amount across all policies for the customer"
-        data_type: float
+        data_type: number(38,2)
       - name: max_coverage_limit
         description: "Maximum coverage limit across all policies for the customer"
-        data_type: integer
+        data_type: number(38,2)
       - name: earliest_policy_date
         description: "Start date of the customer's earliest policy"
         data_type: date
