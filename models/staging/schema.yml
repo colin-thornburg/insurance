@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: policies
+    config:
+      contract:
+        enforced: false
+      public: false
+    description: "Detailed information about insurance policies"
+    columns:
+      - name: policy_id
+        description: "Unique identifier for each policy"
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: unique
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        data_type: varchar
+        constraints:
+          - type: not_null
+        meta:
+          contains_pii: true
+      - name: policy_type
+        description: "Type of insurance policy"
+        data_type: varchar
+      - name: premium
+        description: "Annual premium amount"
+        data_type: float
+      - name: start_date
+        description: "Policy start date"
+        data_type: date
+      - name: end_date
+        description: "Policy end date"
+        data_type: date
+      - name: agent_id
+        description: "Unique identifier for the agent who sold the policy"
+        data_type: varchar
+      - name: coverage_limit
+        description: "Maximum amount the policy will pay out"
+        data_type: integer
+      - name: deductible
+        description: "Amount the policyholder must pay before insurance coverage kicks in"
+        data_type: integer
+
+  - name: monthly_premium
+    config:
+      contract:
+        enforced: true
+      public: true
+    description: "Monthly summary of premiums by policy type"
+    columns:
+      - name: month
+        description: "Month of the summary"
+        data_type: date
+        constraints:
+          - type: not_null
+      - name: policy_type
+        description: "Type of insurance policy"
+        data_type: varchar
+      - name: total_premium
+        description: "Total premium amount for the month and policy type"
+        data_type: float
+      - name: avg_coverage_limit
+        description: "Average coverage limit for the month and policy type"
+        data_type: float
+      - name: avg_deductible
+        description: "Average deductible for the month and policy type"
+        data_type: float
+      - name: active_agents
+        description: "Number of unique agents with policies in the month and policy type"
+        data_type: integer
+
+  - name: customer_policy_summary
+    description: "Summary of policies for each customer"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: unique
+        meta:
+          contains_pii: true
+      - name: total_policies
+        description: "Total number of policies for the customer"
+        data_type: integer
+      - name: total_premium
+        description: "Total premium amount across all policies for the customer"
+        data_type: float
+      - name: max_coverage_limit
+        description: "Maximum coverage limit across all policies for the customer"
+        data_type: integer
+      - name: earliest_policy_date
+        description: "Start date of the customer's earliest policy"
+        data_type: date
+      - name: latest_policy_date
+        description: "End date of the customer's latest policy"
+        data_type: date
