@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: policies
+    access: public
     config:
       contract:
         enforced: true
-      public: true
     description: "Detailed information about insurance policies"
     columns:
       - name: policy_id
@@ -44,10 +44,10 @@ models:
         data_type: number(38,2)
 
   - name: monthly_premium
+    access: public
     config:
       contract:
         enforced: true
-      public: true
     description: "Monthly summary of premiums by policy type"
     columns:
       - name: month
