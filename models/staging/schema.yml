@@ -4,8 +4,8 @@ models:
   - name: policies
     config:
       contract:
-        enforced: false
-      public: false
+        enforced: true
+      public: true
     description: "Detailed information about insurance policies"
     columns:
       - name: policy_id
