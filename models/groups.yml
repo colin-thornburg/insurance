@@ -1,0 +1,8 @@
+groups:
+  - name: rps
+    owner:
+      # 'name' or 'email' is required; additional properties allowed
+      name: Danny the Data Engineer
+      email: rps@jaffleshop.com
+      slack: rps-data
+      github: rps-data-team
