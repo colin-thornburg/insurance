@@ -1,0 +1,44 @@
+semantic_models:
+- name: customers
+  description: Dimension table containing detailed customer information
+  model: ref('dim_customers')
+  defaults:
+    agg_time_dimension: last_update_date
+  entities:
+  - name: customer
+    type: primary
+    expr: customer_id
+  dimensions:
+  - name: age
+    description: Age of the customer
+    type: categorical
+  - name: gender
+    description: Gender of the customer
+    type: categorical
+  - name: marital_status
+    description: Marital status of the customer
+    type: categorical
+  - name: occupation
+    description: Occupation of the customer
+    type: categorical
+  - name: income_bracket
+    description: Income bracket of the customer
+    type: categorical
+  - name: last_update_date
+    description: Date when the customer information was last updated
+    type: time
+    type_params:
+      time_granularity: day
+  measures:
+  - name: total_policies
+    description: Total number of policies held by the customer
+    agg: sum
+    create_metric: true
+  - name: total_premium
+    description: Total premium amount for all policies
+    agg: sum
+    create_metric: true
+  - name: count_customer
+    agg: count
+    create_metric: true
+    expr: customer_id
