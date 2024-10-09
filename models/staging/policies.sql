@@ -1,4 +1,8 @@
-{{ config(materialized='view') }}
+{{
+    config(
+        tags=['PII']
+    )
+}}
 
 SELECT
     policy_id,

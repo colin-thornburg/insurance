@@ -25,6 +25,7 @@ sources:
             description: "Current performance score of the agent"
 
       - name: seed_customer_demographics
+        tags: ['PII']
         description: "Raw data for customer demographics"
         columns:
           - name: customer_id
@@ -45,6 +46,7 @@ sources:
             description: "Income bracket of the customer"
 
       - name: seed_policies
+        tags: ['PII']
         description: "Raw data for insurance policies"
         columns:
           - name: policy_id
