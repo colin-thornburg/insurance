@@ -7,6 +7,9 @@ models:
       contract:
         enforced: true
     description: "Detailed information about insurance policies"
+    meta:
+       owner: 'John Doe'
+       email: john.doe@example.com
     columns:
       - name: policy_id
         description: "Unique identifier for each policy"

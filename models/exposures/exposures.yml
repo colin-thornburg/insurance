@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: agent_performance_dashboard
+    label: Agent Performance Dashboard
+    type: dashboard
+    maturity: medium
+    url: https://tableau.example.com/dashboards/agent_performance
+    description: >
+      This dashboard provides insights into agent performance metrics, including policies sold and premium totals.
+    depends_on:
+      - ref('agent_performance')
+    owner:
+      name: Jane Doe
+      email: jane.doe@example.com
