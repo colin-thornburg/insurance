@@ -1,0 +1,23 @@
+models:
+  - name: stg_policies
+    description: This model extracts and organizes policy data from the raw source, providing a structured view of insurance policies for analysis.
+    columns:
+      - name: policy_id
+        description: A unique identifier for each insurance policy.
+      - name: customer_id
+        tags: ['PII']
+        description: The identifier for the customer associated with the policy.
+      - name: policy_type
+        description: The type of insurance policy, indicating the coverage category.
+      - name: premium
+        description: The amount paid for the insurance policy, typically on a regular basis.
+      - name: start_date
+        description: The date when the insurance policy becomes effective.
+      - name: end_date
+        description: The date when the insurance policy expires or is due for renewal.
+      - name: agent_id
+        description: The identifier for the insurance agent responsible for the policy.
+      - name: coverage_limit
+        description: The maximum amount that the insurance policy will cover.
+      - name: deductible
+        description: The amount the policyholder must pay out of pocket before the insurance coverage applies.

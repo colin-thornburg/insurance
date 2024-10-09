@@ -28,6 +28,7 @@ sources:
         description: "Raw data for customer demographics"
         columns:
           - name: customer_id
+            tags: ['PII']
             description: "Unique identifier for each customer"
             tests:
               - unique
@@ -52,6 +53,7 @@ sources:
               - unique
               - not_null
           - name: customer_id
+            tags: ['PII']
             description: "ID of the customer who owns the policy"
           - name: policy_type
             description: "Type of insurance policy"
