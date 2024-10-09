@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: agent_performance
+    description: "Performance metrics for insurance agents"
+    columns:
+      - name: agent_id
+        description: "Unique identifier for each agent"
+        tests:
+          - unique
+          - not_null
+      - name: agent_name
+        description: "Name of the agent"
+      - name: region
+        description: "Region where the agent operates"
+      - name: policies_sold
+        description: "Number of policies sold by the agent"
+        data_type: number
+      - name: total_premium_sold
+        description: "Total premium amount for policies sold by the agent"
+        data_type: number(38,2)
+      - name: avg_premium_per_policy
+        description: "Average premium per policy sold by the agent"
+        data_type: number(38,2)
+      - name: performance_score
+        description: "Performance score of the agent"
+        data_type: number
+
+  - name: product_performance
+    description: "Performance metrics for insurance products"
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product"
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Name of the insurance product"
+      - name: category
+        description: "Category of the insurance product"
+      - name: policies_sold
+        description: "Number of policies sold for this product"
+        data_type: number
+      - name: total_premium
+        description: "Total premium collected for this product"
+        data_type: number(38,2)
+      - name: avg_premium
+        description: "Average premium per policy for this product"
+        data_type: number(38,2)
+      - name: premium_multiplier
+        description: "Ratio of actual premium to base premium"
+        data_type: number(38,2)
+
+  - name: regional_performance
+    description: "Performance metrics by region"
+    columns:
+      - name: region
+        description: "Name of the region"
+        tests:
+          - unique
+          - not_null
+      - name: active_agents
+        description: "Number of active agents in the region"
+        data_type: number
+      - name: total_policies
+        description: "Total number of policies sold in the region"
+        data_type: number
+      - name: total_premium
+        description: "Total premium collected in the region"
+        data_type: number(38,2)
+      - name: avg_premium_per_policy
+        description: "Average premium per policy in the region"
+        data_type: number(38,2)
+      - name: avg_premium_per_agent
+        description: "Average premium collected per agent in the region"
+        data_type: number(38,2)
+
+  - name: policy_renewal
+    description: "Information about policies due for renewal"
+    columns:
+      - name: policy_id
+        description: "Unique identifier for each policy"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Identifier of the customer holding the policy"
+      - name: policy_type
+        description: "Type of insurance policy"
+      - name: premium
+        description: "Current premium amount for the policy"
+        data_type: number(38,2)
+      - name: end_date
+        description: "End date of the current policy term"
+        data_type: date
+      - name: days_to_renewal
+        description: "Number of days until the policy needs to be renewed"
+        data_type: number
+      - name: renewal_status
+        description: "Status indicating how soon the policy needs to be renewed"
