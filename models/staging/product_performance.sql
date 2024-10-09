@@ -2,7 +2,8 @@
 {{ config(materialized='table') }}
 
 WITH product_data AS (
-    SELECT * FROM {{ ref('seed_products') }}
+    SELECT * FROM {{ source('rps_raw','seed_products') }}
+    
 ),
 policy_data AS (
     SELECT * FROM {{ ref('policies') }}

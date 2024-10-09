@@ -1,5 +1,3 @@
-{{ config(materialized='view') }}
-
 SELECT
     policy_id,
     customer_id,
@@ -10,4 +8,4 @@ SELECT
     agent_id,
     coverage_limit,
     deductible
-FROM {{ ref('stg_policies') }}
+FROM {{ ref('seed_policies') }}
