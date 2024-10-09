@@ -1,5 +1,6 @@
 models:
   - name: stg_policies
+    tags: ['PII']
     description: This model extracts and organizes policy data from the raw source, providing a structured view of insurance policies for analysis.
     columns:
       - name: policy_id
