@@ -8,4 +8,4 @@ SELECT
     agent_id,
     coverage_limit,
     deductible
-FROM {{ ref('seed_policies') }}
+FROM {{ source('rps_raw','seed_policies') }}

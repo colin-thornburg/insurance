@@ -5,4 +5,4 @@ SELECT
     marital_status,
     occupation,
     income_bracket
-FROM {{ ref('seed_customer_demographics') }}
+FROM {{ source('rps_raw','seed_customer_demographics') }}
