@@ -1,0 +1,88 @@
+version: 2
+
+sources:
+  - name: rps_raw
+    database: colint_demo
+    schema: dbt_ins_cthornburg
+    tables:
+      - name: seed_agents
+        description: "Raw data for insurance agents"
+        columns:
+          - name: agent_id
+            description: "Unique identifier for each agent"
+            tests:
+              - unique
+              - not_null
+          - name: agent_name
+            description: "Full name of the agent"
+          - name: agent_email
+            description: "Email address of the agent"
+          - name: hire_date
+            description: "Date the agent was hired"
+          - name: region
+            description: "Region where the agent operates"
+          - name: performance_score
+            description: "Current performance score of the agent"
+
+      - name: seed_customer_demographics
+        description: "Raw data for customer demographics"
+        columns:
+          - name: customer_id
+            description: "Unique identifier for each customer"
+            tests:
+              - unique
+              - not_null
+          - name: age
+            description: "Age of the customer"
+          - name: gender
+            description: "Gender of the customer"
+          - name: marital_status
+            description: "Marital status of the customer"
+          - name: occupation
+            description: "Occupation of the customer"
+          - name: income_bracket
+            description: "Income bracket of the customer"
+
+      - name: seed_policies
+        description: "Raw data for insurance policies"
+        columns:
+          - name: policy_id
+            description: "Unique identifier for each policy"
+            tests:
+              - unique
+              - not_null
+          - name: customer_id
+            description: "ID of the customer who owns the policy"
+          - name: policy_type
+            description: "Type of insurance policy"
+          - name: premium
+            description: "Annual premium amount for the policy"
+          - name: start_date
+            description: "Start date of the policy"
+          - name: end_date
+            description: "End date of the policy"
+          - name: agent_id
+            description: "ID of the agent who sold the policy"
+          - name: coverage_limit
+            description: "Maximum coverage amount for the policy"
+          - name: deductible
+            description: "Deductible amount for the policy"
+
+      - name: seed_products
+        description: "Raw data for insurance products"
+        columns:
+          - name: product_id
+            description: "Unique identifier for each product"
+            tests:
+              - unique
+              - not_null
+          - name: product_name
+            description: "Name of the insurance product"
+          - name: category
+            description: "Category of the insurance product"
+          - name: min_coverage
+            description: "Minimum coverage amount for the product"
+          - name: max_coverage
+            description: "Maximum coverage amount for the product"
+          - name: base_premium
+            description: "Base premium amount for the product"

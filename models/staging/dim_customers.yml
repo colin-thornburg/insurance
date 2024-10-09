@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: dim_customers
+    access: public
+    config:
+      contract:
+        enforced: true
+    description: "Dimension table containing detailed customer information"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        data_type: varchar
+        constraints:
+          - type: not_null
+          - type: unique
+        meta:
+          contains_pii: true
+      - name: age
+        description: "Age of the customer"
+        data_type: number
+        constraints:
+          - type: not_null
+      - name: gender
+        description: "Gender of the customer"
+        data_type: varchar
+        constraints:
+          - type: not_null
+      - name: marital_status
+        description: "Marital status of the customer"
+        data_type: varchar
+      - name: occupation
+        description: "Occupation of the customer"
+        data_type: varchar
+      - name: income_bracket
+        description: "Income bracket of the customer"
+        data_type: varchar
+      - name: total_policies
+        description: "Total number of policies held by the customer"
+        data_type: number
+        constraints:
+          - type: not_null
+      - name: total_premium
+        description: "Total premium amount for all policies"
+        data_type: number(38,2)
+        constraints:
+          - type: not_null
+      - name: last_update_date
+        description: "Date when the customer information was last updated"
+        data_type: timestamp_ltz
+        constraints:
+          - type: not_null
