@@ -1,0 +1,11 @@
+agent_id,agent_name,agent_email,hire_date,region,performance_score
+A001,John Doe,john.doe@rps.com,2020-01-15,Northeast,85
+A002,Jane Smith,jane.smith@rps.com,2019-05-20,Southwest,92
+A003,Robert Johnson,robert.johnson@rps.com,2021-03-10,Midwest,78
+A004,Emily Brown,emily.brown@rps.com,2018-11-30,Southeast,88
+A005,Michael Lee,michael.lee@rps.com,2022-02-01,West,76
+A006,Sarah Davis,sarah.davis@rps.com,2020-09-15,Northeast,90
+A007,David Wilson,david.wilson@rps.com,2019-07-22,Southwest,83
+A008,Lisa Taylor,lisa.taylor@rps.com,2021-06-05,Midwest,87
+A009,Thomas Anderson,thomas.anderson@rps.com,2017-04-18,Southeast,95
+A010,Jennifer Martinez,jennifer.martinez@rps.com,2022-01-10,West,81

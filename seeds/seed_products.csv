@@ -1,0 +1,11 @@
+product_id,product_name,category,min_coverage,max_coverage,base_premium
+P001,Basic Auto,Auto,10000,100000,500
+P002,Comprehensive Auto,Auto,50000,500000,1000
+P003,Homeowners Basic,Property,100000,500000,800
+P004,Homeowners Plus,Property,200000,1000000,1500
+P005,Term Life 10,Life,50000,1000000,300
+P006,Term Life 20,Life,100000,2000000,500
+P007,Personal Liability,Liability,100000,1000000,200
+P008,Business Property,Commercial,500000,5000000,2000
+P009,Professional Liability,Commercial,1000000,10000000,3000
+P010,Workers Compensation,Commercial,500000,5000000,5000
